@@ -15,20 +15,20 @@ steps:
     npm install
     npm run test-cli
     ng build --prod
-  displayName: 'npm install and build'
+  displayName: 'npm install, unitTest and build'
 
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
     testResultsFormat: JUnit
-    testResultsFiles: 'TESTS-*.xml'
+    testResultsFiles: '**/TESTS-*.xml'
   displayName: 'Publish Test Results'
 
 - task: PublishCodeCoverageResults@1
   inputs: 
     codeCoverageTool: Cobertura
-    summaryFileLocation: './coverage/lcov.info'
-    reportDirectory: './coverage'
+    summaryFileLocation: '**/coverage/lcov.info'
+    reportDirectory: '**/coverage'
   displayName: 'Publish Code Coverage Report'
 
 - task: SonarCloudPrepare@1
