@@ -34,6 +34,7 @@ steps:
   displayName: 'Prepare analysis on Sonar'
   inputs:
     SonarCloud: 'sonar-cloud'
+    organization: 'cacevedod'
     projectKey: 'pet-book'
     projectName: 'pet-book'
 
