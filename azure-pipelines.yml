@@ -19,21 +19,22 @@ steps:
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
-    testRunner: JUnit
-    testResultsFiles: '**/TEST-RESULTS.xml'
+    testResultsFormat: JUnit
+    testResultsFiles: '**/reports/ut_report.xml'
   displayName: 'Publish Test Results'
 
 - task: PublishCodeCoverageResults@1
   inputs: 
     codeCoverageTool: Cobertura
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
-    reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
+    summaryFileLocation: '**/coverage/coverage.lcov'
+    reportDirectory: '**/coverage'
   displayName: 'Publish Code Coverage Report'
 
 - task: SonarCloudPrepare@1
   displayName: 'Prepare analysis on Sonar'
   inputs:
     SonarCloud: 'sonar-cloud'
+    scannerMode: 'CLI'
     organization: 'cacevedod'
     projectKey: 'pet-book'
     projectName: 'pet-book'
