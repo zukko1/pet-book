@@ -36,8 +36,6 @@ steps:
     SonarCloud: 'sonar-cloud'
     scannerMode: 'CLI'
     organization: 'cacevedod'
-    projectKey: 'pet-book'
-    projectName: 'pet-book'
 
 - task: SonarCloudAnalyze@1
   displayName: 'Run Code Analysis'
