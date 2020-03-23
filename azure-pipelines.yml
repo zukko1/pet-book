@@ -47,7 +47,10 @@ steps:
   inputs:
     pollingTimeoutSec: '300'
 
-- task: SonarCloudQualityGateCheck@1
+- task: sonarcloud-buildbreaker@2
+  inputs:
+    SonarCloud: 'sonar-cloud'
+    organization: 'cacevedod'
 
 - task: CopyFiles@2
   inputs:
