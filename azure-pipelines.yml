@@ -38,7 +38,17 @@ steps:
     SonarCloud: 'sonar-cloud'
     organization: 'cacevedod'
 
-- task: PublishBuildArtifacts@1
+- task: Docker@2
   inputs:
-    PathtoPublish: 'dist/pet-book'
-    ArtifactName: pet-book
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'dist/pet-book'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/pet-book-$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
