@@ -38,11 +38,6 @@ steps:
     SonarCloud: 'sonar-cloud'
     organization: 'cacevedod'
 
-- task: Docker@2
-  inputs:
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: 'dist/pet-book'
