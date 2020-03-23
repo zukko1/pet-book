@@ -19,12 +19,26 @@ steps:
     ls     
   displayName: 'npm install, unitTest and build'
 
-- task: PublishPipelineArtifact@0
+- task: SonarCloudPrepare@1
+  displayName: 'Prepare analysis on Sonar'
   inputs:
-    artifactName: 'angular'
-    targetPath: 'dist'
+    SonarCloud: 'sonar-cloud'
+    scannerMode: 'CLI'
+    organization: 'cacevedod'
+
+- task: SonarCloudAnalyze@1
+  displayName: 'Run Code Analysis'
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
+
+- task: sonarcloud-buildbreaker@2
+  inputs:
+    SonarCloud: 'sonar-cloud'
+    organization: 'cacevedod'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'dist'
-    ArtifactName: angular2
+    PathtoPublish: 'dist/pet-book'
+    ArtifactName: pet-book
