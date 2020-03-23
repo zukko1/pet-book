@@ -38,11 +38,16 @@ steps:
     SonarCloud: 'sonar-cloud'
     organization: 'cacevedod'
 
-- task: CopyFiles@2
+- task: ArchiveFiles@2
   inputs:
-    Contents: 'dist/**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    rootFolderOrFile: 'dist/**'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
-  inputs: 
-    pathtoPublish: $(Build.ArtifactStagingDirectory)
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'pet-book'
+    publishLocation: 'Container'
