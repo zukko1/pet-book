@@ -14,7 +14,7 @@ steps:
     npm install -g @angular/cli
     npm install
     ng build --prod
-    npm run test-cli   
+    npm run test-ci   
     ls /coverage
     ls     
   displayName: 'npm install, unitTest and build'
