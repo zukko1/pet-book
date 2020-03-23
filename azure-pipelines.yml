@@ -13,8 +13,10 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    npm run test-cli
     ng build --prod
+    npm run test-cli   
+    ls /coverage
+    ls     
   displayName: 'npm install, unitTest and build'
 
 - task: PublishTestResults@2
