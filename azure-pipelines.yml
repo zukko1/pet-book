@@ -19,35 +19,12 @@ steps:
     ls     
   displayName: 'npm install, unitTest and build'
 
-- task: SonarCloudPrepare@1
-  displayName: 'Prepare analysis on Sonar'
+- task: PublishPipelineArtifact@0
   inputs:
-    SonarCloud: 'sonar-cloud'
-    scannerMode: 'CLI'
-    organization: 'cacevedod'
-
-- task: SonarCloudAnalyze@1
-  displayName: 'Run Code Analysis'
-
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
-
-- task: sonarcloud-buildbreaker@2
-  inputs:
-    SonarCloud: 'sonar-cloud'
-    organization: 'cacevedod'
-
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: 'dist/**'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+    artifactName: 'angular'
+    targetPath: 'dist'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'pet-book'
-    publishLocation: 'Container'
+    PathtoPublish: 'dist'
+    ArtifactName: angular2
