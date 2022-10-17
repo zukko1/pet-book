@@ -1,5 +1,5 @@
 TN:
-SF:C:\Users\Administrador\Documents\GitHub\pet-book\src\polyfills.ts
+SF:/github/workspace/src/polyfills.ts
 FNF:0
 FNH:0
 LF:0
@@ -8,7 +8,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\Administrador\Documents\GitHub\pet-book\src\test.ts
+SF:/github/workspace/src/test.ts
 FNF:0
 FNH:0
 DA:18,1
@@ -20,7 +20,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\Administrador\Documents\GitHub\pet-book\src\app\app.component.ts
+SF:/github/workspace/src/app/app.component.ts
 FN:7,(anonymous_0)
 FNF:1
 FNH:1
@@ -33,7 +33,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\Administrador\Documents\GitHub\pet-book\src\app\filterimages.pipe.ts
+SF:/github/workspace/src/app/filterimages.pipe.ts
 FN:7,(anonymous_0)
 FN:9,(anonymous_1)
 FNF:2
@@ -52,7 +52,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:C:\Users\Administrador\Documents\GitHub\pet-book\src\app\image.service.ts
+SF:/github/workspace/src/app/image.service.ts
 FN:5,(anonymous_0)
 FN:9,(anonymous_1)
 FN:10,(anonymous_2)
@@ -71,7 +71,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\Administrador\Documents\GitHub\pet-book\src\app\image-details\image-details.component.ts
+SF:/github/workspace/src/app/image-details/image-details.component.ts
 FN:12,(anonymous_0)
 FN:15,(anonymous_1)
 FNF:2
@@ -88,7 +88,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\Administrador\Documents\GitHub\pet-book\src\app\image-gallery\image-gallery.component.ts
+SF:/github/workspace/src/app/image-gallery/image-gallery.component.ts
 FN:15,(anonymous_0)
 FN:18,(anonymous_1)
 FNF:2
