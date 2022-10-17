@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core'    
 @Injectable()    
 export class ImageService {    
-    allImages = [];    
     
     getImages() {    
-        return this.allImages = Imagesdelatils.slice(0);    
+        return Imagesdelatils.slice(0);    
     }    
     
     getImage(id: number) {    
